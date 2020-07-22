@@ -19,6 +19,8 @@ let A3 = "A3"
 let arr = ["A", "B", "C", "D", "E", "F", "G", "H", "I"]
 
 document.getElementById(`${A3}`).value = textArea.value[2];
-for(let i = 0; i < textArea.value.length; i++) {
-  for(let j = 0; j)
+for(let i = 1; i <= textArea.value.length; i++) {
+  let quo = Math.floor(i / 9);
+  let rem = i % 9;
+  document.getElementById(`${}`).value = textArea.value[2];
 }
