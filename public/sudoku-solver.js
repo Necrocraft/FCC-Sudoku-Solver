@@ -18,7 +18,9 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-
+textArea.addEventListener('change', (e)=> {
+  console.log("run");
+})
 
 /* 
   Export your functions for testing in Node.
