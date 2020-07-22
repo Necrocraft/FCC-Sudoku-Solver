@@ -34,6 +34,9 @@ textArea.addEventListener('input', (e)=> {
       }
     }
   }
+  else {
+    document.getElementById('error-msg').innerHtml += "<p>This is the text which has been inserted by JS</p>"
+  }
 })
 
 /* 
