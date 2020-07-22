@@ -21,6 +21,10 @@ document.addEventListener('DOMContentLoaded', () => {
 textArea.addEventListener('input', (e)=> {
   console.log(e);
   if(e.target.value.length === 81 && e.data != 0) {
+    var element = document.getElementById("error-msg");
+      while (element.firstChild) {
+      element.removeChild(element.firstChild);
+      }
     textArea.value = e.target.value;
     let arr = ["A", "B", "C", "D", "E", "F", "G", "H", "I"];
     for(let i = 1; i <= textArea.value.length; i++) {
@@ -35,7 +39,15 @@ textArea.addEventListener('input', (e)=> {
     }
   }
   else {
-    document.getElementById('error-msg').innerHtml += "<p>This is the text which has been inserted by JS</p>"
+    var tag = document.createElement("p");
+     var text = document.createTextNode("Entered value should be between 1 to 9 and length of text area should be 81");
+     tag.appendChild(text);
+     var element = document.getElementById("error-msg");
+      while (element.firstChild) {
+      element.removeChild(element.firstChild);
+      }
+     element.appendChild(tag);
+    return;
   }
 })
 
