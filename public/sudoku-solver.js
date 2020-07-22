@@ -18,8 +18,22 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-textArea.addEventListener('change', (e)=> {
-  console.log("run");
+textArea.addEventListener('input', (e)=> {
+  console.log(e);
+  if(e.target.value.length === 81 && e.data != 0) {
+    textArea.value = e.target.value;
+    let arr = ["A", "B", "C", "D", "E", "F", "G", "H", "I"];
+    for(let i = 1; i <= textArea.value.length; i++) {
+      let quo = Math.floor(i / 9);
+      let rem = i % 9;
+      if(rem === 0){
+        document.getElementById(`${arr[quo - 1] + 9}`).value = textArea.value[i - 1] === "." ? "" : textArea.value[i - 1];
+      }
+      else {
+        document.getElementById(`${arr[quo] + rem}`).value = textArea.value[i - 1] === "." ? "" : textArea.value[i - 1];
+      }
+    }
+  }
 })
 
 /* 
