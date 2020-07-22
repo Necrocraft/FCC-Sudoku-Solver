@@ -53,7 +53,13 @@ textArea.addEventListener('input', (e)=> {
 const sudoku = document.getElementsByClassName("sudoku-input");
 
 document.getElementById('sudoku-grid').addEventListener('input', e => {
-  console.log(e);
+  let arr = ["A", "B", "C", "D", "E", "F", "G", "H", "I"];
+  let _id = e.target.id;
+  let val = e.target.value;
+  
+  console.log(typeof _id);
+  console.log(typeof val);
+  for
 })
 
 /* 
