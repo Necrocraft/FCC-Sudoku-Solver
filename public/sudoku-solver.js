@@ -19,12 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-textArea.addEventListener('change', (e) => {
-    textArea.value = e.target.value;
-  console.log(textArea.value);
-})
 
-textAr
 /* 
   Export your functions for testing in Node.
   Note: The `try` block is to prevent errors on
