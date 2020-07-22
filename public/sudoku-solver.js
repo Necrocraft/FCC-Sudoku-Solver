@@ -14,6 +14,11 @@ textArea.value = "..9..5.1.85.4....2432......1...69.83.9.....6.62.71...9......19
   the client side
 */
 
-let A3 = ""
+let A3 = "A3"
 
-let td3 = document.getElementById(`${A3}`)
+let arr = ["A", "B", "C", "D", "E", "F", "G", "H", "I"]
+
+document.getElementById(`${A3}`).value = textArea.value[2];
+for(let i = 0; i < textArea.value.length; i++) {
+  for(let j = 0; j)
+}
