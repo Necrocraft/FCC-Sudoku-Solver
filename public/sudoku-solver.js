@@ -56,10 +56,16 @@ document.getElementById('sudoku-grid').addEventListener('input', e => {
   let arr = ["A", "B", "C", "D", "E", "F", "G", "H", "I"];
   let _id = e.target.id;
   let val = e.target.value;
-  
-  console.log(typeof _id);
-  console.log(typeof val);
-  for
+  console.log(_id);
+  console.log(val);
+  for(let i = 0; i < arr.length; i++) {
+    if(_id[0] === arr[i]) {
+      let pos = i * 9 + parseInt(_id[1]);
+      console.log(pos);
+      let output = [textArea.value.slice(0, pos), val, textArea.value.slice(pos)].join('');
+      console.log(output);
+    }
+  }
 })
 
 /* 
