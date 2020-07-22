@@ -50,7 +50,7 @@ textArea.addEventListener('input', (e)=> {
   }
 })
 
-var x = document.getElementsByClassName("grid")[0].rows;
+var x = document.getElementsByClassName("grid")[0].rows[0].cells;
 console.log(x);
 
 /* 
