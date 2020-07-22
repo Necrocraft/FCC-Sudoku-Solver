@@ -52,11 +52,9 @@ textArea.addEventListener('input', (e)=> {
 
 const sudoku = document.getElementsByClassName("sudoku-input");
 
-sudoku.oninput = (e) => {
+document.getElementById('sudoku-grid').addEventListener('input', e => {
   console.log(e);
-}
-
-console.log(sudoku);
+})
 
 /* 
   Export your functions for testing in Node.
