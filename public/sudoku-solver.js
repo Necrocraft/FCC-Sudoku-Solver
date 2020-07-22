@@ -19,7 +19,6 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 textArea.addEventListener('input', (e)=> {
-  console.log(e);
   if(e.target.value.length === 81 && e.data != 0) {
     var element = document.getElementById("error-msg");
       while (element.firstChild) {
@@ -50,6 +49,9 @@ textArea.addEventListener('input', (e)=> {
     return;
   }
 })
+
+var x = document.getElementsByClassName("grid");
+console.log(x);
 
 /* 
   Export your functions for testing in Node.
