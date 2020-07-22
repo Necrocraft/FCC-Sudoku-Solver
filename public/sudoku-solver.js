@@ -11,8 +11,5 @@ document.addEventListener('DOMContentLoaded', () => {
   Note: The `try` block is to prevent errors on
   the client side
 */
-try {
-  module.exports = {
-    
-  }
-} catch (e) {}
+
+console.log(textArea.value);
