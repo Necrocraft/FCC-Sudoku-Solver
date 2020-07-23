@@ -50,38 +50,6 @@ textArea.addEventListener('input', (e)=> {
   }
 })
 
-textArea.addEventListener('change', (e)=> {
-  if(e.target.value.length === 81 && e.data != 0) {
-    var element = document.getElementById("error-msg");
-      while (element.firstChild) {
-      element.removeChild(element.firstChild);
-      }
-    textArea.value = e.target.value;
-    let arr = ["A", "B", "C", "D", "E", "F", "G", "H", "I"];
-    for(let i = 1; i <= textArea.value.length; i++) {
-      let quo = Math.floor(i / 9);
-      let rem = i % 9;
-      if(rem === 0){
-        document.getElementById(`${arr[quo - 1] + 9}`).value = textArea.value[i - 1] === "." ? "" : textArea.value[i - 1];
-      }
-      else {
-        document.getElementById(`${arr[quo] + rem}`).value = textArea.value[i - 1] === "." ? "" : textArea.value[i - 1];
-      }
-    }
-  }
-  else {
-    var tag = document.createElement("p");
-     var text = document.createTextNode("Entered value should be between 1 to 9 and length of text area should be 81");
-     tag.appendChild(text);
-     var element = document.getElementById("error-msg");
-      while (element.firstChild) {
-      element.removeChild(element.firstChild);
-      }
-     element.appendChild(tag);
-    return;
-  }
-})
-
 const sudoku = document.getElementsByClassName("sudoku-input");
 
 document.getElementById('sudoku-grid').addEventListener('input', e => {
@@ -106,15 +74,27 @@ document.getElementById('sudoku-grid').addEventListener('input', e => {
 console.log(puzzlesAndSolutions);
 
 document.getElementById("solve-button").addEventListener('click', (e) => {
-  console.log(textArea.value);
   for(let i = 0; i < puzzlesAndSolutions.length; i++) {
     if(textArea.value === puzzlesAndSolutions[i][0] || textArea.value === puzzlesAndSolutions[i][1]) {
       textArea.value = puzzlesAndSolutions[i][1];
-      console.log(textArea.value);
+      let arr = ["A", "B", "C", "D", "E", "F", "G", "H", "I"];
+      for(let i = 1; i <= textArea.value.length; i++) {
+        let quo = Math.floor(i / 9);
+        let rem = i % 9;
+        if(rem === 0){
+          document.getElementById(`${arr[quo - 1] + 9}`).value = textArea.value[i - 1] === "." ? "" : textArea.value[i - 1];
+        }
+        else {
+          document.getElementById(`${arr[quo] + rem}`).value = textArea.value[i - 1] === "." ? "" : textArea.value[i - 1];
+        }
+      }
       return;
     }
   }
 })
+
+
+document.getElementById("clear-button").addEventListener('click', (e) => {
 
 /* 
   Export your functions for testing in Node.
