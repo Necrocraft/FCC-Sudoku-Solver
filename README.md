@@ -16,9 +16,4 @@ Sudoku Solver
 1. All 6 unit tests are complete and passing. See `/tests/1_unit-tests.js` for the expected behavior you should write tests for.
 1. All 4 functional tests are complete and passing. See `/tests/2_functional-tests.js` for the functionality you should write tests for.
 
-### Testing and additional notes
-
-* To run the tests on Glitch, set NODE_ENV to `test` without quotes.
-* To run the tests in the console, use the command `npm run test`. To open the Glitch console, first click "Tools" in the bottom left corner and then click "Terminal".
-* All logic can go into `public/sudoku-solver.js`.
-* Create all of the unit/functional tests in `tests/1_unit-tests.js` and `tests/2_functional-tests.js`.
+Glitch Url for the project is: "https://necro-sudoku-solver.glitch.me"
