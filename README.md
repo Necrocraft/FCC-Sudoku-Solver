@@ -1,4 +1,4 @@
-**freeCodeCamp** - Quality Assurance 4: Sudoku Solver
+Sudoku Solver
 ------
 
 ### User stories:
