@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 textArea.addEventListener('input', (e)=> {
-  if(e.data != 0) {
+  if(e.data == 1 || e.data == 2 || e.data == 3 || e.data == 4 || e.data == 5 || e.data == 6 || e.data == 7 || e.data == 8 || e.data == 9 || e.data == null) {
     var element = document.getElementById("error-msg");
       while (element.firstChild) {
       element.removeChild(element.firstChild);
@@ -53,8 +53,7 @@ textArea.addEventListener('input', (e)=> {
 const sudoku = document.getElementsByClassName("sudoku-input");
 
 document.getElementById('sudoku-grid').addEventListener('input', e => {
-  console.log(e.data != 0);
-  if(e.data != 0) {
+  if(e.data == 1 || e.data == 2 || e.data == 3 || e.data == 4 || e.data == 5 || e.data == 6 || e.data == 7 || e.data == 8 || e.data == 9 || e.data == null) {
     var element = document.getElementById("error-msg");
       while (element.firstChild) {
       element.removeChild(element.firstChild);
