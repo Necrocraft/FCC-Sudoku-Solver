@@ -53,21 +53,30 @@ textArea.addEventListener('input', (e)=> {
 const sudoku = document.getElementsByClassName("sudoku-input");
 
 document.getElementById('sudoku-grid').addEventListener('input', e => {
-  let arr = ["A", "B", "C", "D", "E", "F", "G", "H", "I"];
-  let _id = e.target.id;
-  let val = e.target.value;
-  console.log(_id);
-  console.log(val);
-  for(let i = 0; i < arr.length; i++) {
-    if(_id[0] === arr[i]) {
-      let pos = i * 9 + parseInt(_id[1]);
-      console.log(pos);
-      let output = textArea.value.split("");
-      output.splice(pos - 1, 1, val);
-      textArea.value = output.join("");
-      console.log(output.join(""));
-      console.log(output.length);
+  console.log(e.data != 0);
+  if(e.data != 0) {
+    let arr = ["A", "B", "C", "D", "E", "F", "G", "H", "I"];
+    let _id = e.target.id;
+    let val = e.target.value === "" ? "." : e.target.value;
+    for(let i = 0; i < arr.length; i++) {
+      if(_id[0] === arr[i]) {
+        let pos = i * 9 + parseInt(_id[1]);
+        let output = textArea.value.split("");
+        output.splice(pos - 1, 1, val);
+        textArea.value = output.join("");
+      }
     }
+  }
+  else {
+    var tag = document.createElement("p");
+     var text = document.createTextNode("Entered value should be between 1 to 9");
+     tag.appendChild(text);
+     var element = document.getElementById("error-msg");
+      while (element.firstChild) {
+      element.removeChild(element.firstChild);
+      }
+     element.appendChild(tag);
+    return;
   }
 })
 
