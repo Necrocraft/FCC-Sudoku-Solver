@@ -55,6 +55,10 @@ const sudoku = document.getElementsByClassName("sudoku-input");
 document.getElementById('sudoku-grid').addEventListener('input', e => {
   console.log(e.data != 0);
   if(e.data != 0) {
+    var element = document.getElementById("error-msg");
+      while (element.firstChild) {
+      element.removeChild(element.firstChild);
+      }
     let arr = ["A", "B", "C", "D", "E", "F", "G", "H", "I"];
     let _id = e.target.id;
     let val = e.target.value === "" ? "." : e.target.value;
